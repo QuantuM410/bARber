@@ -14,7 +14,7 @@ const Register = () => {
   const handleInputChange = (event) => {
     const { name, value } = event.target;
     setFormData({ ...formData, [name]: value });
-  };
+  };  
 
   const handleSubmit = (event) => {
     event.preventDefault();
