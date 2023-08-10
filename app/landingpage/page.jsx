@@ -38,7 +38,7 @@ const LandingPage = () => {
                     Discover your perfect style today!</p>
 
                 <div
-                    className="scroll-component animate-bounce cursor-pointer text-white text-2xl flex items-center justify-center mb-4 absolute bottom-0 w-full h-16"
+                    className="animate-bounce cursor-pointer text-white text-2xl flex items-center justify-center mb-4 absolute bottom-0 w-full h-16"
                     onClick={handleScrollClick}
                 >
                     <ChevronDoubleDownIcon className="h-16 w-16 hover:cursor-pointer" />
