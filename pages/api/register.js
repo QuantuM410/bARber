@@ -1,8 +1,4 @@
-import { PrismaClient } from "@prisma/client";
-import { NextResponse } from "next/server";
-
-const prisma = new PrismaClient();
-
+import { prisma} from "../../db.ts";
 // export async function GET(req, res) {
 //   try {
 //     const data = req.body;
@@ -24,10 +20,8 @@ const prisma = new PrismaClient();
 //   }
 // }
 
-
-
 export default async function handler(req, res) {
-  try {
+  if (req.method === "POST") {
     const data = req.body;
     const user = await prisma.users.create({
       data: {
@@ -42,7 +36,7 @@ export default async function handler(req, res) {
     console.log(user);
     console.log(typeof user.phone);
     return res.status(200).json({ user });
-  } catch (error) {
-    console.log(error);
+  } else {
+   return res.status(405).json({ message: "Method not allowed" });
   }
 }
