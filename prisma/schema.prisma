@@ -1,0 +1,37 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "mysql"
+  url      = env("DATABASE_URL")
+}
+
+model appointments {
+  id           Int      @id @default(autoincrement())
+  user_id      Int
+  client_name  String   @db.VarChar(256)
+  client_phone Int
+  time         DateTime @db.DateTime(0)
+  body         String   @db.Text
+  users        users    @relation(fields: [user_id], references: [id], onDelete: NoAction, onUpdate: NoAction, map: "appointments_ibfk_1")
+
+  @@index([user_id], map: "user_id")
+}
+
+model users {
+  id           Int            @id @default(autoincrement())
+  username     String         @unique @db.VarChar(256)
+  password     String         @db.VarChar(256)
+  email        String         @unique @db.VarChar(256)
+  location     String         @db.Text
+  phone        String         @unique @db.VarChar(256)
+  gender       users_gender
+  appointments appointments[]
+}
+
+enum users_gender {
+  Male
+  Female
+  Unisex
+}
