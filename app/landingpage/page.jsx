@@ -1,8 +1,10 @@
 "use client";
 import React, { useState, useEffect } from 'react';
-import { ChevronDoubleDownIcon } from '@heroicons/react/outline';
+import { BiMouse } from "react-icons/bi";
 
 const LandingPage = () => {
+    const [scrollPosition, setScrollPosition] = useState(0);
+
     const handleScrollClick = () => {
         const nextPageOffset = window.innerHeight;
         const scrollTarget = nextPageOffset - 1;
@@ -12,7 +14,17 @@ const LandingPage = () => {
         });
     };
 
+    const handleSection2ScrollClick = () => {
+        setScrollPosition(window.innerHeight);
+        window.scrollTo({
+            top: 2 * window.innerHeight - 1, // Scroll to the beginning of section 3
+            behavior: 'smooth',
+        });
+    };
+
+
     return (
+        // first section
         <div className='relative h-screen'>
             <div className='h-screen inset-0 z-0'>
                 <img
@@ -41,14 +53,15 @@ const LandingPage = () => {
                     className="animate-bounce cursor-pointer text-white text-2xl flex items-center justify-center mb-4 absolute bottom-0 w-full h-16"
                     onClick={handleScrollClick}
                 >
-                    <ChevronDoubleDownIcon className="h-16 w-16 hover:cursor-pointer" />
+                    <BiMouse className="h-14 w-14 text-white hover:cursor-pointer" />
+
                 </div>
             </div>
 
             <div
                 className={`absolute bottom-0 h-16 w-full bg-gradient-to-t from-[#000000] }`}
             />
-
+            {/* second section */}
             <div className='absolute w-full'>
                 <div className='bg-[#000000] text-white py-16'>
                     <div className='container mx-auto text-center'>
@@ -61,6 +74,11 @@ const LandingPage = () => {
                             <button className='mt-8 px-6 py-3 bg-blue-500 text-white rounded-md hover:bg-blue-600 transition-colors duration-300'>
                                 Get Started
                             </button>
+                            <div
+                                className={`absolute bottom--2 h-8 w-full bg-gradient-to-t from-[#1b1b24] }`}
+                            />
+
+
                         </div>
                         <div className='mb-16 transform transition-transform hover:scale-105'>
                             <h2 className='text-3xl font-semibold'>Book an appointment</h2>
@@ -71,23 +89,69 @@ const LandingPage = () => {
                             <button className='mt-8 px-6 py-3 bg-green-500 text-white rounded-md hover:bg-green-600 transition-colors duration-300'>
                                 Book Now
                             </button>
-                        </div>
-                        <div className='transform transition-transform hover:scale-105'>
-                            <h2 className='text-3xl font-semibold'>Try-on new hairstyles</h2>
-                            <p className='mt-4 text-lg'>
-                                Experiment with different hairstyles virtually to find your perfect look.<br />
-                                Our cutting-edge virtual try-on technology allows you to see yourself in different styles before making a change.
-                            </p>
-                            <button className='mt-8 px-6 py-3 bg-purple-500 text-white rounded-md hover:bg-purple-600 transition-colors duration-300'>
-                                Try Now
-                            </button>
-                        </div>
-                    </div>
-                </div>
+                            <div
+                                className={`absolute bottom--2 h-8 w-full bg-gradient-to-t from-[#1b1b24] }`}
+                            />
 
+                        </div>
+                        <div className='relative mb-16 transform transition-transform hover:scale-105 '>
+                            <div className='relative z-10'>
+                                <h2 className='text-3xl font-semibold'>Try-on new hairstyles</h2>
+                                <p className='mt-4 text-lg'>
+                                    Experiment with different hairstyles virtually to find your perfect look.<br />
+                                    Our cutting-edge virtual try-on technology allows you to see yourself in different styles before making a change.
+                                </p>
+                                <button className='mt-8 px-6 py-3 bg-purple-500 text-white rounded-md hover:bg-purple-600 transition-colors duration-300'>
+                                    Try Now
+                                </button>
+                            </div>
+
+                            <div
+                                className={`absolute bottom--2 h-8 w-full bg-gradient-to-t from-[#1b1b24] }`}
+                            />
+                        </div>
+
+                        <div
+                            className="animate-bounce cursor-pointer text-white text-2xl flex items-center justify-center mb-4 bottom-0 w-full h-16"
+                            onClick={handleSection2ScrollClick}
+                        >
+                            <BiMouse className="h-14 w-14 text-white hover:cursor-pointer" />
+                        </div>
+                        {/* third section */}
+                        <div className='flex justify-center items-center h-screen'>
+                            <div className="container grid grid-cols-1 md:grid-cols-2 gap-8">
+                                <div className="bg-gradient-to-br from-blue-800 to-purple-600 py-12 rounded-lg transform transition-transform hover:scale-105">
+                                    <div className="container mx-auto">
+                                        <h2 className="text-3xl font-semibold mb-4">About Us</h2>
+                                        <p className="text-lg mb-6">
+                                            Welcome to bARber, your ultimate destination for all things hair and style. Our mission is to revolutionize the salon experience by connecting customers with top-notch salons and providing innovative tools for exploring new looks.
+                                            Whether you're looking to register your salon and expand your client base or try on new hairstyles virtually, bARber has you covered. Our platform is designed to bring convenience, creativity, and confidence to your hair journey.
+                                        </p>
+                                        <p className="text-lg">
+                                            Join us in exploring the endless possibilities of hair transformation and express yourself like never before.
+                                        </p>
+                                    </div>
+                                </div>
+                                <div className="bg-gradient-to-br from-indigo-800 to-teal-600 py-8 rounded-lg transform transition-transform hover:scale-105">
+                                    <div className="container mx-auto">
+                                        <h2 className="text-2xl font-semibold mb-4">Contact Us</h2>
+                                        <p className="text-lg mb-2">Have questions or need assistance? Reach out to us:</p>
+                                        <p className="text-lg">
+                                            Email: info@barber.com<br />
+                                            Phone: (123) 456-7890<br />
+                                            Address: 1234 Salon Street, City, Country
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+
+                </div>
             </div>
 
-        </div>
+        </div >
     )
 }
 
