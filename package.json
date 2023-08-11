@@ -23,6 +23,8 @@
     "tailwindcss": "3.3.3"
   },
   "devDependencies": {
+    "@types/node": "20.4.9",
+    "@types/react": "18.2.20",
     "prisma": "^5.1.1"
   }
 }

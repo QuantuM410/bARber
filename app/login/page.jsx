@@ -2,8 +2,10 @@
 import React, { useState } from "react";
 import Image from "next/image";
 import axios from "axios";
+import { useRouter } from "next/navigation";
 
 export default function Login() {
+  const router = useRouter();
   const [formData, setFormData] = useState({
     username: "",
     password: "",
@@ -18,12 +20,13 @@ export default function Login() {
     axios
       .post("/api/login", formData)
       .then((res) => {
-        console.log(res.data);
-        console.log(res.data.user)
+        console.log(res.data.user.username);
         if (res.data.user === null) {
           alert("Invalid username or password");
         } else {
+          console.log(`/dashboard/${res.data.user.id}`);
           alert("Sucessfully logged in!");
+          router.push(`/dashboard/${res.data.user.id}`);
         }
       })
       .catch((err) => {
