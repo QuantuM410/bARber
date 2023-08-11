@@ -1,6 +1,8 @@
 "use client";
 import React, { useState, useEffect } from 'react';
 import { BiMouse } from "react-icons/bi";
+import Link from 'next/link';
+
 
 const LandingPage = () => {
     const [scrollPosition, setScrollPosition] = useState(0);
@@ -21,6 +23,15 @@ const LandingPage = () => {
             behavior: 'smooth',
         });
     };
+
+    const handleSection3ScrollClick = () => {
+        setScrollPosition(window.innerHeight);
+        window.scrollTo({
+            top: 0, // Scroll to the beginning of section 3
+            behavior: 'smooth',
+        });
+    };
+
 
 
     return (
@@ -71,9 +82,11 @@ const LandingPage = () => {
                                 Register your salon with bARber to reach more customers and showcase your services.<br />
                                 You'll gain access to our advanced management tools, connect with clients, and more.
                             </p>
-                            <button className='mt-8 px-6 py-3 bg-blue-500 text-white rounded-md hover:bg-blue-600 transition-colors duration-300'>
-                                Get Started
-                            </button>
+                            <Link href="/register">
+                                <button className='mt-8 px-6 py-3 bg-blue-500 text-white rounded-md hover:bg-blue-600 transition-colors duration-300'>
+                                    Get Started
+                                </button>
+                            </Link>
                             <div
                                 className={`absolute bottom--2 h-8 w-full bg-gradient-to-t from-[#1b1b24] }`}
                             />
@@ -119,10 +132,11 @@ const LandingPage = () => {
                         </div>
                         {/* third section */}
                         <div className='flex justify-center items-center h-screen'>
-                            <div className="container grid grid-cols-1 md:grid-cols-2 gap-8">
+                            <div className="container grid grid-cols-1 md:grid-cols-2 gap-14">
                                 <div className="bg-gradient-to-br from-blue-800 to-purple-600 py-12 rounded-lg transform transition-transform hover:scale-105">
                                     <div className="container mx-auto">
                                         <h2 className="text-3xl font-semibold mb-4">About Us</h2>
+                                        <div className="border-4 w-20 border-white mx-auto my-3 rounded-lg" />
                                         <p className="text-lg mb-6">
                                             Welcome to bARber, your ultimate destination for all things hair and style. Our mission is to revolutionize the salon experience by connecting customers with top-notch salons and providing innovative tools for exploring new looks.
                                             Whether you're looking to register your salon and expand your client base or try on new hairstyles virtually, bARber has you covered. Our platform is designed to bring convenience, creativity, and confidence to your hair journey.
@@ -132,10 +146,12 @@ const LandingPage = () => {
                                         </p>
                                     </div>
                                 </div>
-                                <div className="bg-gradient-to-br from-indigo-800 to-teal-600 py-8 rounded-lg transform transition-transform hover:scale-105">
+                                <div className="bg-gradient-to-br from-indigo-800 to-teal-600 py-12 rounded-lg transform transition-transform hover:scale-105">
                                     <div className="container mx-auto">
-                                        <h2 className="text-2xl font-semibold mb-4">Contact Us</h2>
+                                        <h2 className="text-3xl text-white font-semibold mb-4">Contact Us</h2>
+                                        <div className="border-4 w-20 border-white mx-auto my-3 rounded-lg" />
                                         <p className="text-lg mb-2">Have questions or need assistance? Reach out to us:</p>
+                                        <br />
                                         <p className="text-lg">
                                             Email: info@barber.com<br />
                                             Phone: (123) 456-7890<br />
@@ -145,12 +161,15 @@ const LandingPage = () => {
                                 </div>
                             </div>
                         </div>
-
+                        <div
+                            className="animate-bounce cursor-pointer text-2xl flex items-center justify-center h-16"
+                            onClick={handleSection3ScrollClick}
+                        >
+                            <BiMouse className=" h-14 w-14 text-white hover:cursor-pointer" />
+                        </div>
                     </div>
-
                 </div>
             </div>
-
         </div >
     )
 }
