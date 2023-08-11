@@ -1,6 +1,6 @@
 "use client";
 import React, { useState, useEffect } from 'react';
-import { ChevronDoubleDownIcon } from '@heroicons/react/outline';
+import { BiMouse } from "react-icons/bi";
 
 const LandingPage = () => {
     const handleScrollClick = () => {
@@ -41,7 +41,8 @@ const LandingPage = () => {
                     className="animate-bounce cursor-pointer text-white text-2xl flex items-center justify-center mb-4 absolute bottom-0 w-full h-16"
                     onClick={handleScrollClick}
                 >
-                    <ChevronDoubleDownIcon className="h-16 w-16 hover:cursor-pointer" />
+                    <BiMouse className="h-14 w-14 text-white hover:cursor-pointer" />
+
                 </div>
             </div>
 
@@ -61,6 +62,7 @@ const LandingPage = () => {
                             <button className='mt-8 px-6 py-3 bg-blue-500 text-white rounded-md hover:bg-blue-600 transition-colors duration-300'>
                                 Get Started
                             </button>
+
                         </div>
                         <div className='mb-16 transform transition-transform hover:scale-105'>
                             <h2 className='text-3xl font-semibold'>Book an appointment</h2>
@@ -72,7 +74,7 @@ const LandingPage = () => {
                                 Book Now
                             </button>
                         </div>
-                        <div className='transform transition-transform hover:scale-105'>
+                        <div className='mb-16 transform transition-transform hover:scale-105'>
                             <h2 className='text-3xl font-semibold'>Try-on new hairstyles</h2>
                             <p className='mt-4 text-lg'>
                                 Experiment with different hairstyles virtually to find your perfect look.<br />
@@ -82,9 +84,24 @@ const LandingPage = () => {
                                 Try Now
                             </button>
                         </div>
+                        {/* About Us section */}
+                        {/* <div className='mb-16 transform transition-transform hover:scale-105'>
+                            <h2 className='text-3xl font-semibold'>About Us</h2>
+                            <p className='mt-4 text-lg'>
+                                We are dedicated to revolutionizing the way people experience hairstyling. 
+                                Our team is committed to bringing you the latest trends and technologies in the world of beauty.
+                            </p>
+                        </div> */}
+
+                        {/* Contacts section */}
+                        {/* <div className='mb-16 transform transition-transform hover:scale-105'>
+                            <h2 className='text-3xl font-semibold'>Contact Us</h2>
+                            <p className='mt-4 text-lg'>
+                                Have questions or feedback? Reach out to us at contact@barber.com.
+                            </p>
+                        </div> */}
                     </div>
                 </div>
-
             </div>
 
         </div>
