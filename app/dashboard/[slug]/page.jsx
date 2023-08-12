@@ -9,23 +9,65 @@ export default function ShopDashboard({ params }) {
     getAppointments();
   }, [filterOption]);
 
-  async function getAppointments() {
+  async function getAppointments(timePeriod = null) {
     try {
-      console.log(params.slug)
       const url = "/api/dashboard/" + params.slug;
-      console.log(url);
       const response = await axios.get(url);
-      setAppointments(response.data.appointments);
-      console.log(response.data.appointments);
+      const appointments = response.data.appointments;
+      
+      if (timePeriod === "today") {
+        console.log("tday")
+        const today = new Date();
+        console.log(today)
+        const filteredAppointments = appointments.filter((appointment) => {
+          const appointmentDate = new Date(appointment.time);
+          return (
+            appointmentDate.getDate() === today.getDate() &&
+            appointmentDate.getMonth() === today.getMonth() &&
+            appointmentDate.getFullYear() === today.getFullYear()
+          );
+        });
+        console.log(filteredAppointments)
+        setAppointments(filteredAppointments);
+      } else if (timePeriod === "tomorrow") {
+        console.log("tom")
+        const tomorrow = new Date();
+        console.log(tomorrow)
+        tomorrow.setDate(tomorrow.getDate() + 1);
+        const filteredAppointments = appointments.filter((appointment) => {
+          const appointmentDate = new Date(appointment.time);
+          return (
+            appointmentDate.getDate() === tomorrow.getDate() &&
+            appointmentDate.getMonth() === tomorrow.getMonth() &&
+            appointmentDate.getFullYear() === tomorrow.getFullYear()
+          );
+        });
+        setAppointments(filteredAppointments);
+      } else if (timePeriod === null) {
+        console.log("object")
+        setAppointments(appointments);
+      }
     } catch (error) {
       console.error(error);
     }
   }
 
+  useEffect(() => {
+    console.log(appointments);
+  }, [appointments]);
+
   const handleFilterChange = (event) => {
+    console.log(event.target.value)
     setFilterOption(event.target.value);
+    if (event.target.value === "today") {
+      getAppointments("today");
+    } else if (event.target.value === "tomorrow") {
+      getAppointments("tomorrow");
+    } else {
+      getAppointments();
+    }
   };
-  console.log(appointments)
+  
   return (
     <div className="p-6">
       <h1 className="text-3xl font-semibold mb-4">Shop Dashboard</h1>

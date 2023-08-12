@@ -21,23 +21,27 @@ const BookAppointments = () => {
   const handleFormSubmit = (event) => {
     event.preventDefault();
     console.log(formData);
+    const updatedFormData = {
+      ...formData,
+      appointmentTime: formData.appointmentTime + ":00.000Z",
+    };
+    console.log(updatedFormData)
     // Send appointment data to the server
-    axios.post("/api/appointment", formData)
-      .then((response) => {
-        console.log(response.data);
-        alert("Appointment booked successfully!");
-      })
+    axios.post("/api/appointment", updatedFormData).then((response) => {
+      console.log(response.data);
+      alert("Appointment booked successfully!");
+    });
   };
 
   async function getSalons() {
     try {
       const response = await axios.get("/api/salon");
       console.log(response);
-  
+
       // Extract usernames from the response data
-      const salons = response.data.salons.map(salon => salon.username);
+      const salons = response.data.salons.map((salon) => salon.username);
       console.log(salons);
-  
+
       setSalonOptions(salons);
     } catch (error) {
       console.log(error);
@@ -45,7 +49,7 @@ const BookAppointments = () => {
   }
   useEffect(() => {
     getSalons();
-    }, []);
+  }, []);
 
   return (
     <div className="flex justify-center items-center h-screen bg-gray-100">
