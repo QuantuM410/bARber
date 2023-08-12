@@ -7,18 +7,18 @@ export default function ShopDashboard({ params }) {
 
   useEffect(() => {
     getAppointments();
-  }, [filterOption]);
+  }, []);
 
   async function getAppointments(timePeriod = null) {
     try {
       const url = "/api/dashboard/" + params.slug;
       const response = await axios.get(url);
       const appointments = response.data.appointments;
-      
+
       if (timePeriod === "today") {
-        console.log("tday")
+        console.log("tday");
         const today = new Date();
-        console.log(today)
+        console.log(today);
         const filteredAppointments = appointments.filter((appointment) => {
           const appointmentDate = new Date(appointment.time);
           return (
@@ -27,13 +27,13 @@ export default function ShopDashboard({ params }) {
             appointmentDate.getFullYear() === today.getFullYear()
           );
         });
-        console.log(filteredAppointments)
+        console.log(filteredAppointments);
         setAppointments(filteredAppointments);
       } else if (timePeriod === "tomorrow") {
-        console.log("tom")
+        console.log("tom");
         const tomorrow = new Date();
-        console.log(tomorrow)
         tomorrow.setDate(tomorrow.getDate() + 1);
+        console.log(tomorrow);
         const filteredAppointments = appointments.filter((appointment) => {
           const appointmentDate = new Date(appointment.time);
           return (
@@ -43,8 +43,10 @@ export default function ShopDashboard({ params }) {
           );
         });
         setAppointments(filteredAppointments);
-      } else if (timePeriod === null) {
-        console.log("object")
+        console.log(timePeriod);
+      } else {
+        console.log(timePeriod);
+        console.log("object");
         setAppointments(appointments);
       }
     } catch (error) {
@@ -57,7 +59,6 @@ export default function ShopDashboard({ params }) {
   }, [appointments]);
 
   const handleFilterChange = (event) => {
-    console.log(event.target.value)
     setFilterOption(event.target.value);
     if (event.target.value === "today") {
       getAppointments("today");
@@ -67,7 +68,7 @@ export default function ShopDashboard({ params }) {
       getAppointments();
     }
   };
-  
+
   return (
     <div className="p-6">
       <h1 className="text-3xl font-semibold mb-4">Shop Dashboard</h1>
@@ -98,10 +99,15 @@ export default function ShopDashboard({ params }) {
         <tbody>
           {appointments.map((appointment) => (
             <tr key={appointment.id} className="border-b border-gray-300">
-              <td className="p-2">{appointment.client_name}</td>
-              <td className="p-2">{appointment.client_phone}</td>
-              <td className="p-2">{appointment.time}</td>
-              <td className="p-2">{appointment.body}</td>
+              <td className="p-2 text-center">{appointment.client_name}</td>
+              <td className="p-2 text-center">{appointment.client_phone}</td>
+              <td className="p-2 text-center">
+                {new Date(appointment.time).toLocaleString("en-US", {
+                  dateStyle: "short",
+                  timeStyle: "short",
+                })}
+              </td>
+              <td className="p-2 text-center">{appointment.body}</td>
             </tr>
           ))}
         </tbody>
