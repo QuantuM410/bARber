@@ -16,13 +16,13 @@ const LandingPage = () => {
     });
   };
 
-  const handleSection2ScrollClick = () => {
-    setScrollPosition(window.innerHeight);
-    window.scrollTo({
-      top: 2 * window.innerHeight - 1, // Scroll to the beginning of section 3
-      behavior: "smooth",
-    });
-  };
+  // const handleSection2ScrollClick = () => {
+  //   setScrollPosition(window.innerHeight);
+  //   window.scrollTo({
+  //     top: 2 * window.innerHeight - 1, // Scroll to the beginning of section 3
+  //     behavior: "smooth",
+  //   });
+  // };
 
   const handleSection3ScrollClick = () => {
     setScrollPosition(window.innerHeight);
@@ -134,12 +134,6 @@ const LandingPage = () => {
               />
             </div>
 
-            <div
-              className="animate-bounce cursor-pointer text-white text-2xl flex items-center justify-center mb-4 bottom-0 w-full h-16"
-              onClick={handleSection2ScrollClick}
-            >
-              <BiMouse className="h-14 w-14 text-white hover:cursor-pointer" />
-            </div>
             {/* third section */}
             <div className="flex justify-center items-center  bg-black">
               <div className="container mx-auto">
