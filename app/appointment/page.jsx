@@ -2,6 +2,7 @@
 import React, { useEffect, useState } from "react";
 import Image from "next/image";
 import axios from "axios";
+import { Bugfender } from "@bugfender/sdk";
 
 const BookAppointments = () => {
   const [salonOptions, setSalonOptions] = useState([]); // ["Salon 1", "Salon 2", "Salon 3"]
@@ -44,7 +45,7 @@ const BookAppointments = () => {
 
       setSalonOptions(salons);
     } catch (error) {
-      console.log(error);
+      Bugfender.log(error);
     }
   }
   useEffect(() => {

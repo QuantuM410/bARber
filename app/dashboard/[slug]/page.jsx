@@ -1,6 +1,7 @@
 "use client";
 import React, { useEffect, useState } from "react";
 import axios from "axios";
+import { Bugfender } from "@bugfender/sdk";
 export default function ShopDashboard({ params }) {
   const [appointments, setAppointments] = useState([]);
   const [filterOption, setFilterOption] = useState("all");
@@ -50,12 +51,12 @@ export default function ShopDashboard({ params }) {
         setAppointments(appointments);
       }
     } catch (error) {
-      console.error(error);
+      Bugfender.log(error);
     }
   }
 
   useEffect(() => {
-    console.log(appointments);
+    Bugfender.log("Appointments", appointments);
   }, [appointments]);
 
   const handleFilterChange = (event) => {

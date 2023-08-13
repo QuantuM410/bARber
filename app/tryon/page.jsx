@@ -2,6 +2,7 @@
 import React, { useEffect } from "react";
 import * as deepar from "deepar";
 import Carousel from "../../components/carousel.js";
+import { Bugfender } from "@bugfender/sdk";
 
 
 const TryOnPage = () => {
@@ -29,7 +30,7 @@ const TryOnPage = () => {
 
                 });
             } catch (error) {
-                console.error(error);
+                Bugfender.log(error);
                 return;
             }
 
