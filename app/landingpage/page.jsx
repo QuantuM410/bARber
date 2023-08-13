@@ -33,7 +33,7 @@ const LandingPage = () => {
           alt="Background"
           className="w-full h-full object-cover opacity-70 bg-no-repeat"
         />
-        <div className="absolute inset-0 bg-black opacity-60"></div>
+        <div className="absolute inset-0 bg-black opacity-75"></div>
       </div>
       <div className="absolute inset-0 flex flex-col items-center justify-center z-10">
         <div className="absolute inset-x-0 top-0 flex justify-center">
