@@ -115,6 +115,7 @@ export default function Register() {
               <option value="Female">Female</option>
             </select>
           </div>
+          <br />
           <button
             type="submit"
             className="w-full bg-black text-white border-2  px-4 py-2 rounded-md hover:bg-white hover:text-[#181818] transition duration-300"

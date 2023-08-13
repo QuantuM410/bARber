@@ -79,11 +79,18 @@ const LandingPage = () => {
                 You'll gain access to our advanced management tools, connect
                 with clients, and more.
               </p>
-              <Link href="/register">
-                <button className="mt-8 px-6 py-3 bg-blue-500 text-white rounded-md hover:bg-blue-600 transition-colors duration-300">
-                  Get Started
-                </button>
-              </Link>
+              <div className="flex justify-center items-center gap-x-4">
+                <Link href="/register">
+                  <button className="mt-8 px-6 py-3 w-[142px] bg-blue-500 text-white font-semibold rounded-md hover:bg-blue-600 transition-colors duration-300">
+                    Get Started
+                  </button>
+                </Link>
+                <Link href="/login">
+                  <button className="mt-8 px-6 py-3 w-[142px] bg-blue-500 text-white font-semibold rounded-md hover:bg-blue-600 transition-colors duration-300">
+                    Login
+                  </button>
+                </Link>
+              </div>
               <div
                 className={`absolute bottom--2 h-8 w-full bg-gradient-to-t from-[#1b1b24] }`}
               />
@@ -97,7 +104,7 @@ const LandingPage = () => {
                 Browse through available time slots, choose your preferred
                 stylist, and secure your spot hassle-free.
               </p>
-              <button className="mt-8 px-6 py-3 bg-green-500 text-white rounded-md hover:bg-green-600 transition-colors duration-300">
+              <button className="mt-8 px-6 py-3 bg-green-500 text-white font-semibold rounded-md hover:bg-green-600 transition-colors duration-300">
                 Book Now
               </button>
               <div
@@ -117,7 +124,7 @@ const LandingPage = () => {
                   yourself in different styles before making a change.
                 </p>
                 <Link href="/tryon">
-                  <button className="mt-8 px-6 py-3 bg-purple-500 text-white rounded-md hover:bg-purple-600 transition-colors duration-300">
+                  <button className="mt-8 px-6 py-3 bg-purple-500 font-semibold text-white rounded-md hover:bg-purple-600 transition-colors duration-300">
                     Try Now
                   </button>
                 </Link>
