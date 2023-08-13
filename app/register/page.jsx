@@ -3,6 +3,7 @@
 import React, { useState } from "react";
 import Image from "next/image";
 import axios from "axios";
+import router from "next/navigation";
 export default function Register() {
   const [formData, setFormData] = useState({
     username: "",
@@ -22,7 +23,8 @@ export default function Register() {
   async function createUser() {
     axios.post("/api/register", formData).then((res) => {
       console.log(res);
-      console.log("nice")
+      window.location.href = "/login";
+      
     }).catch((err) => {
       console.log(err);
     });
