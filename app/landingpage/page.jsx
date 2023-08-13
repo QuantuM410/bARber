@@ -104,9 +104,11 @@ const LandingPage = () => {
                 Browse through available time slots, choose your preferred
                 stylist, and secure your spot hassle-free.
               </p>
-              <button className="mt-8 px-6 py-3 bg-green-500 text-white font-semibold rounded-md hover:bg-green-600 transition-colors duration-300">
-                Book Now
-              </button>
+              <Link href='/appointment'>
+                <button className="mt-8 px-6 py-3 bg-green-500 text-white font-semibold rounded-md hover:bg-green-600 transition-colors duration-300">
+                  Book Now
+                </button>
+              </Link>
               <div
                 className={`absolute bottom--2 h-8 w-full bg-gradient-to-t from-[#1b1b24] }`}
               />
