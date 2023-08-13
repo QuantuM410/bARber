@@ -3,6 +3,7 @@ import React, { useState } from "react";
 import Image from "next/image";
 import axios from "axios";
 import { useRouter } from "next/navigation";
+import { Bugfender } from "@bugfender/sdk";
 
 export default function Login() {
   const router = useRouter();
@@ -30,7 +31,7 @@ export default function Login() {
         }
       })
       .catch((err) => {
-        console.log(err);
+        Bugfender.log(err);
       });
   }
 
@@ -38,7 +39,7 @@ export default function Login() {
     event.preventDefault();
     // You can implement the login logic here
     loginUser();
-    console.log(formData);
+    Bugfender.log("User logged in", formData.username);
   };
 
   const backgroundStyles = {

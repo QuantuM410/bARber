@@ -30,7 +30,7 @@ export default function Register() {
       window.location.href = "/login";
 
     }).catch((err) => {
-      console.log(err);
+      Bugfender.log(err)
     });
   }
 
