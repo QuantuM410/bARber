@@ -16,6 +16,7 @@ export default function Register() {
   const handleInputChange = (event) => {
     const { name, value } = event.target;
     setFormData({ ...formData, [name]: value });
+
   };
 
   async function createUser() {
@@ -96,21 +97,17 @@ export default function Register() {
             />
           </div>
           <div className="mb-4">
-            <div className="relative">
-              <div className="absolute left-3 top-2 text-gray-400">
-                Your clientelle
-              </div>
-              <select
-                name="gender"
-                className="w-full px-3 py-2 border rounded-md"
-                onChange={handleInputChange}
-              >
-                <option value=""></option>
-                <option value="Unisex">Unisex</option>
-                <option value="Male">Male</option>
-                <option value="Female">Female</option>
-              </select>
-            </div>
+            <select
+              name="gender"
+              className="w-full px-3 py-2 border rounded-md"
+              onChange={handleInputChange}
+              value={formData.gender}
+            >
+              <option value="">Your clientele</option>
+              <option value="Unisex">Unisex</option>
+              <option value="Male">Male</option>
+              <option value="Female">Female</option>
+            </select>
           </div>
           <button
             type="submit"

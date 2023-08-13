@@ -116,9 +116,11 @@ const LandingPage = () => {
                   Our cutting-edge virtual try-on technology allows you to see
                   yourself in different styles before making a change.
                 </p>
-                <button className="mt-8 px-6 py-3 bg-purple-500 text-white rounded-md hover:bg-purple-600 transition-colors duration-300">
-                  Try Now
-                </button>
+                <Link href="/tryon">
+                  <button className="mt-8 px-6 py-3 bg-purple-500 text-white rounded-md hover:bg-purple-600 transition-colors duration-300">
+                    Try Now
+                  </button>
+                </Link>
               </div>
 
               <div
