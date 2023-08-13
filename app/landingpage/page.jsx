@@ -3,7 +3,11 @@ import React, { useState, useEffect } from "react";
 import { BiMouse } from "react-icons/bi";
 import { MdOutlineKeyboardDoubleArrowUp } from "react-icons/md";
 import Link from "next/link";
+import { Bugfender } from "@bugfender/sdk";
+Bugfender.init({
+  appKey: process.env.NEXT_PUBLIC_BUGFENDER_API_KEY
 
+});
 const LandingPage = () => {
   const [scrollPosition, setScrollPosition] = useState(0);
 

@@ -9,6 +9,7 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "@bugfender/sdk": "^2.2.4",
     "@heroicons/react": "^1.0.6",
     "@prisma/client": "^5.1.1",
     "autoprefixer": "10.4.14",
