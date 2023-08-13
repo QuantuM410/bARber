@@ -33,6 +33,20 @@ const TryOnPage = () => {
                 return;
             }
 
+            var resizeCanvas = function () {
+                const canvas = document.getElementById("deepar-canvas");
+                const dpr = window.devicePixelRatio || 1;
+                canvas.width = Math.floor(window.innerWidth * dpr);
+                canvas.height = Math.floor(window.innerHeight * dpr);
+            };
+
+            window.addEventListener("resize", resizeCanvas);
+            // Hide the loading screen.
+            document.getElementById("loading-screen").style.display = "none";
+            document.getElementById("ar-screen").style.display = "block";
+
+            window.effect = effectList[0];
+
             const glassesCarousel = new Carousel("carousel");
             glassesCarousel.onChange = async (value) => {
                 const loadingSpinner = document.getElementById("loading-spinner");
@@ -53,7 +67,6 @@ const TryOnPage = () => {
 
     return (
         <div className="tryon-page">
-            {/* Add your UI elements here */}
             <div className="fixed-fullscreen" id="loading-screen">
                 <div
                     style={{
@@ -88,30 +101,38 @@ const TryOnPage = () => {
                     />
                 </div>
             </div>
-            <div
-                className="fixed-fullscreen screen"
-                id="permission-denied-screen"
-                style={{ display: 'none' }}
-            >
-                <div className="permission-denied-text-container">
-                    <div className="permission-denied-text text-black" id="camera_denied">
-                        <p>Please reload and allow camera access to use this app.</p>
-                        <a
-                            className="permission-denied-button text-black"
-                            href="https://www.deepar.ai/projects"
-                            target="__blank"
-                        >
-                            Discover more
-                        </a>
+
+            <div id="ar-screen" class="relative">
+                <canvas class="deepar w-full h-screen" id="deepar-canvas"></canvas>
+
+                <div class="carousel absolute bottom-0 md:bottom-10 left-1/2 transform -translate-x-1/2" id="carousel">
+                    <div class="carousel-center" id="carousel-center">
+                        <div class="lds-ring" id="loading-spinner" style={{ display: 'none' }}>
+
+                        </div>
+                    </div>
+                    <div class="carousel-slider flex flex-col md:flex-row justify-center items-center md:space-x-4">
+                        <div class="slide mb-4 md:mb-0">
+                            <img class="w-32 h-32 border-4 rounded-full" src="avatars/white.png" alt="Avatar" />
+                        </div>
+                        <div class="slide mb-4 md:mb-0">
+                            <img class="w-32 h-32 border-4 rounded-full" src="avatars/brownhair.png" alt="Avatar" />
+                        </div>
+                        <div class="slide mb-4 md:mb-0">
+                            <img class="w-32 h-32 border-4 rounded-full" src="avatars/blackhair.png" alt="Avatar" />
+                        </div>
+                        <div class="slide">
+                            <img class="w-32 h-32 border-4 rounded-full" src="avatars/green.png" alt="Avatar" />
+                        </div>
                     </div>
                 </div>
             </div>
-            <canvas className="deepar" id="deepar-canvas"></canvas>
-            <div className="carousel" id="carousel">
 
-                {/* Add carousel slides here */}
 
-            </div>
+
+
+
+
             {/* Other UI elements */}
         </div>
     );
