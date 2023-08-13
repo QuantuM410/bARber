@@ -3,11 +3,7 @@ import React, { useState, useEffect } from "react";
 import { BiMouse } from "react-icons/bi";
 import { MdOutlineKeyboardDoubleArrowUp } from "react-icons/md";
 import Link from "next/link";
-import { Bugfender } from "@bugfender/sdk";
-Bugfender.init({
-  appKey: process.env.NEXT_PUBLIC_BUGFENDER_API_KEY
 
-});
 const LandingPage = () => {
   const [scrollPosition, setScrollPosition] = useState(0);
 
@@ -146,16 +142,16 @@ const LandingPage = () => {
               <div className="container mx-auto">
 
                 {/* Contact Us Section */}
-                <div class="container my-20 mx-auto text-center md:px-6">
+                <div className="container my-20 mx-auto text-center md:px-6">
 
 
-                  <section class="mb-32">
-                    <div class="w-full md:w-7/12 mx-auto md:px-3 lg:px-6">
-                      <h2 class="mb-8 text-3xl font-bold">Frequently asked questions</h2>
+                  <section className="mb-32">
+                    <div className="w-full md:w-7/12 mx-auto md:px-3 lg:px-6">
+                      <h2 className="mb-8 text-3xl font-bold">Frequently asked questions</h2>
                       <div className="border-4 w-20 border-white mx-auto my-3 mb-8 rounded-lg" />
-                      <div class="mb-4">
-                        <p class="font-bold text-primary text-xl mb-3">What is bARber?</p>
-                        <p class="mb-9 text-neutral-500 dark:text-neutral-300">
+                      <div className="mb-4">
+                        <p className="font-bold text-primary text-xl mb-3">What is bARber?</p>
+                        <p className="mb-9 text-neutral-500 dark:text-neutral-300">
                           bARber is an innovative platform that allows you to explore a variety
                           of hairstyles using augmented reality (AR) technology. You can virtually
                           try on different haircuts and styles before making a decision. Our
@@ -164,9 +160,9 @@ const LandingPage = () => {
                         </p>
                       </div>
 
-                      <div class="mb-4">
-                        <p class="font-bold text-primary text-xl mb-3">How can I try on hairstyles using AR?</p>
-                        <p class="mb-9 text-neutral-500 dark:text-neutral-300">
+                      <div className="mb-4">
+                        <p className="font-bold text-primary text-xl mb-3">How can I try on hairstyles using AR?</p>
+                        <p className="mb-9 text-neutral-500 dark:text-neutral-300">
                           Trying on hairstyles with AR is simple. Download the bARber app, create
                           an account, and upload a photo of yourself. Browse through our extensive
                           collection of hairstyles and see how each one looks on you in real-time
@@ -175,9 +171,9 @@ const LandingPage = () => {
                         </p>
                       </div>
 
-                      <div class="mb-4">
-                        <p class="font-bold text-primary text-xl mb-3">Can I book appointments with local salons through bARber?</p>
-                        <p class="mb-8 text-neutral-500 dark:text-neutral-300">
+                      <div className="mb-4">
+                        <p className="font-bold text-primary text-xl mb-3">Can I book appointments with local salons through bARber?</p>
+                        <p className="mb-8 text-neutral-500 dark:text-neutral-300">
                           Yes, absolutely! bARber not only lets you explore hairstyles virtually but
                           also connects you with nearby salons. Once you've found the hairstyle you
                           love, you can book an appointment with a salon that offers that style. It's
@@ -185,9 +181,9 @@ const LandingPage = () => {
                         </p>
                       </div>
 
-                      <div class="mb-4">
-                        <p class="font-bold text-primary mb-3 text-xl mb-3">How can salons register on bARber?</p>
-                        <p class="text-neutral-500 dark:text-neutral-300">
+                      <div className="mb-4">
+                        <p className="font-bold text-primary mb-3 text-xl mb-3">How can salons register on bARber?</p>
+                        <p className="text-neutral-500 dark:text-neutral-300">
                           If you own a salon, you can easily register on bARber to showcase your services
                           to a wide audience. Create an account, provide details about your salon, and make
                           yourself visible to potential clients. Manage your appointments, connect with
@@ -197,47 +193,47 @@ const LandingPage = () => {
 
                     </div>
 
-                    <div class="w-full md:w-5/12 mt-24 mx-auto md:px-3 lg:px-6">
+                    <div className="w-full md:w-5/12 mt-24 mx-auto md:px-3 lg:px-6">
                       <h2 className="text-3xl text-white font-semibold mb-4">Contact Us</h2>
                       <div className="border-4 w-20 border-white mx-auto my-3 mb-8 rounded-lg" />
-                      <p class="mb-8 font-bold">
+                      <p className="mb-8 font-bold">
                         Didn't find your answer in the FAQ? Contact our sales department
                       </p>
                       <form>
-                        <div class="relative mb-6" data-te-input-wrapper-init>
+                        <div className="relative mb-6" data-te-input-wrapper-init>
                           <input
                             type="text"
-                            class="peer block w-full rounded border-0 bg-transparent py-2 px-3 leading-[1.6] outline-none transition-all duration-200 ease-linear focus:placeholder:opacity-100 peer-focus:text-primary data-[te-input-state-active]:placeholder:opacity-100"
+                            className="peer block w-full rounded border-0 bg-transparent py-2 px-3 leading-[1.6] outline-none transition-all duration-200 ease-linear focus:placeholder:opacity-100 peer-focus:text-primary data-[te-input-state-active]:placeholder:opacity-100"
                             id="nameInput"
                             placeholder="Name"
                           />
                         </div>
-                        <div class="relative mb-6" data-te-input-wrapper-init>
+                        <div className="relative mb-6" data-te-input-wrapper-init>
                           <input
                             type="email"
-                            class="peer block w-full rounded border-0 bg-transparent py-2 px-3 leading-[1.6] outline-none transition-all duration-200 ease-linear focus:placeholder:opacity-100 peer-focus:text-primary data-[te-input-state-active]:placeholder:opacity-100"
+                            className="peer block w-full rounded border-0 bg-transparent py-2 px-3 leading-[1.6] outline-none transition-all duration-200 ease-linear focus:placeholder:opacity-100 peer-focus:text-primary data-[te-input-state-active]:placeholder:opacity-100"
                             id="emailInput"
                             placeholder="Email address"
                           />
                         </div>
-                        <div class="relative mb-6" data-te-input-wrapper-init>
+                        <div className="relative mb-6" data-te-input-wrapper-init>
                           <textarea
-                            class="peer block w-full rounded border-0 bg-transparent py-2 px-3 leading-[1.6] outline-none transition-all duration-200 ease-linear focus:placeholder:opacity-100 data-[te-input-state-active]:placeholder:opacity-100"
+                            className="peer block w-full rounded border-0 bg-transparent py-2 px-3 leading-[1.6] outline-none transition-all duration-200 ease-linear focus:placeholder:opacity-100 data-[te-input-state-active]:placeholder:opacity-100"
                             id="messageInput"
                             rows="3"
                             placeholder="Your message"
                           ></textarea>
                         </div>
-                        <div class="mb-6 inline-block min-h-[1.5rem] justify-center pl-[1.5rem] md:flex">
+                        <div className="mb-6 inline-block min-h-[1.5rem] justify-center pl-[1.5rem] md:flex">
                           <input
-                            class="relative float-left mt-[0.15rem] mr-[6px] -ml-[1.5rem] h-[1.125rem] w-[1.125rem] appearance-none rounded-[0.25rem] border-[0.125rem] border-solid border-neutral-300 outline-none before:pointer-events-none before:absolute before:h-[0.875rem] before:w-[0.875rem] before:scale-0 before:rounded-full before:bg-transparent before:opacity-0 before:shadow-[0px_0px_0px_13px_transparent] before:content-[''] checked:border-primary checked:bg-primary checked:before:opacity-[0.16] checked:after:absolute checked:after:ml-[0.25rem] checked:after:-mt-px checked:after:block checked:after:h-[0.8125rem] checked:after:w-[0.375rem] checked:after:rotate-45 checked:after:border-[0.125rem] checked:after:border-t-0 checked:after:border-l-0 checked:after:border-solid checked:after:border-white checked:after:bg-transparent checked:after:content-[''] hover:cursor-pointer hover:before:opacity-[0.04] hover:before:shadow-[0px_0px_0px_13px_rgba(0,0,0,0.6)] focus:shadow-none focus:transition-[border-color_0.2s] focus:before:scale-100 focus:before:opacity-[0.12] focus:before:shadow-[0px_0px_0px_13px_rgba(0,0,0,0.6)] focus:before:transition-[box-shadow_0.2s,transform_0.2s] focus:after:absolute focus:after:z-[1] focus:after:block focus:after:h-[0.875rem] focus:after:w-[0.875rem] focus:after:rounded-[0.125rem] focus:after:content-[''] checked:focus:before:scale-100 checked:focus:before:shadow-[0px_0px_0px_13px_#3b71ca] checked:focus:before:shadow-[0px_0px_0px_13px_#3b71ca] checked:focus:before:transition-[box-shadow_0.2s,transform_0.2s] checked:focus:after:ml-[0.25rem] checked:focus:after:-mt-px checked:focus:after:h-[0.8125rem] checked:focus:after:w-[0.375rem] checked:focus:after:rotate-45 checked:focus:after:rounded-none checked:focus:after:border-[0.125rem] checked:focus:after:border-t-0 checked:focus:after:border-l-0 checked:focus:after:border-solid checked:focus:after:border-white checked:focus:after:bg-transparent dark:border-neutral-600 dark:checked:border-primary dark:checked:bg-primary dark:focus:before:shadow-[0px_0px_0px_13px_rgba(255,255,255,0.4)] dark:checked:focus:before:shadow-[0px_0px_0px_13px_#3b71ca]"
+                            className="relative float-left mt-[0.15rem] mr-[6px] -ml-[1.5rem] h-[1.125rem] w-[1.125rem] appearance-none rounded-[0.25rem] border-[0.125rem] border-solid border-neutral-300 outline-none before:pointer-events-none before:absolute before:h-[0.875rem] before:w-[0.875rem] before:scale-0 before:rounded-full before:bg-transparent before:opacity-0 before:shadow-[0px_0px_0px_13px_transparent] before:content-[''] checked:border-primary checked:bg-primary checked:before:opacity-[0.16] checked:after:absolute checked:after:ml-[0.25rem] checked:after:-mt-px checked:after:block checked:after:h-[0.8125rem] checked:after:w-[0.375rem] checked:after:rotate-45 checked:after:border-[0.125rem] checked:after:border-t-0 checked:after:border-l-0 checked:after:border-solid checked:after:border-white checked:after:bg-transparent checked:after:content-[''] hover:cursor-pointer hover:before:opacity-[0.04] hover:before:shadow-[0px_0px_0px_13px_rgba(0,0,0,0.6)] focus:shadow-none focus:transition-[border-color_0.2s] focus:before:scale-100 focus:before:opacity-[0.12] focus:before:shadow-[0px_0px_0px_13px_rgba(0,0,0,0.6)] focus:before:transition-[box-shadow_0.2s,transform_0.2s] focus:after:absolute focus:after:z-[1] focus:after:block focus:after:h-[0.875rem] focus:after:w-[0.875rem] focus:after:rounded-[0.125rem] focus:after:content-[''] checked:focus:before:scale-100 checked:focus:before:shadow-[0px_0px_0px_13px_#3b71ca] checked:focus:before:shadow-[0px_0px_0px_13px_#3b71ca] checked:focus:before:transition-[box-shadow_0.2s,transform_0.2s] checked:focus:after:ml-[0.25rem] checked:focus:after:-mt-px checked:focus:after:h-[0.8125rem] checked:focus:after:w-[0.375rem] checked:focus:after:rotate-45 checked:focus:after:rounded-none checked:focus:after:border-[0.125rem] checked:focus:after:border-t-0 checked:focus:after:border-l-0 checked:focus:after:border-solid checked:focus:after:border-white checked:focus:after:bg-transparent dark:border-neutral-600 dark:checked:border-primary dark:checked:bg-primary dark:focus:before:shadow-[0px_0px_0px_13px_rgba(255,255,255,0.4)] dark:checked:focus:before:shadow-[0px_0px_0px_13px_#3b71ca]"
                             type="checkbox"
                             value=""
                             id="copyCheckbox"
                             checked
                           />
                           <label
-                            class="inline-block pl-[0.15rem] hover:cursor-pointer"
+                            className="inline-block pl-[0.15rem] hover:cursor-pointer"
                             for="copyCheckbox"
                           >
                             Send me a copy of this message
@@ -247,7 +243,7 @@ const LandingPage = () => {
                           type="button"
                           data-te-ripple-init
                           data-te-ripple-color="light"
-                          class="mb-6 inline-block w-full rounded bg-primary px-6 pt-2.5 pb-2 text-xs font-medium uppercase leading-normal text-white shadow-[0_4px_9px_-4px_#3b71ca] transition duration-150 ease-in-out hover:bg-primary-600 hover:shadow-[0_8px_9px_-4px_rgba(59,113,202,0.3),0_4px_18px_0_rgba(59,113,202,0.2)] focus:bg-primary-600 focus:shadow-[0_8px_9px_-4px_rgba(59,113,202,0.3),0_4px_18px_0_rgba(59,113,202,0.2)] focus:outline-none focus:ring-0 active:bg-primary-700 active:shadow-[0_8px_9px_-4px_rgba(59,113,202,0.3),0_4px_18px_0_rgba(59,113,202,0.2)] dark:shadow-[0_4px_9px_-4px_rgba(59,113,202,0.5)] dark:hover:shadow-[0_8px_9px_-4px_rgba(59,113,202,0.2),0_4px_18px_0_rgba(59,113,202,0.1)] dark:focus:shadow-[0_8px_9px_-4px_rgba(59,113,202,0.2),0_4px_18px_0_rgba(59,113,202,0.1)] dark:active:shadow-[0_8px_9px_-4px_rgba(59,113,202,0.2),0_4px_18px_0_rgba(59,113,202,0.1)]"
+                          className="mb-6 inline-block w-full rounded bg-primary px-6 pt-2.5 pb-2 text-xs font-medium uppercase leading-normal text-white shadow-[0_4px_9px_-4px_#3b71ca] transition duration-150 ease-in-out hover:bg-primary-600 hover:shadow-[0_8px_9px_-4px_rgba(59,113,202,0.3),0_4px_18px_0_rgba(59,113,202,0.2)] focus:bg-primary-600 focus:shadow-[0_8px_9px_-4px_rgba(59,113,202,0.3),0_4px_18px_0_rgba(59,113,202,0.2)] focus:outline-none focus:ring-0 active:bg-primary-700 active:shadow-[0_8px_9px_-4px_rgba(59,113,202,0.3),0_4px_18px_0_rgba(59,113,202,0.2)] dark:shadow-[0_4px_9px_-4px_rgba(59,113,202,0.5)] dark:hover:shadow-[0_8px_9px_-4px_rgba(59,113,202,0.2),0_4px_18px_0_rgba(59,113,202,0.1)] dark:focus:shadow-[0_8px_9px_-4px_rgba(59,113,202,0.2),0_4px_18px_0_rgba(59,113,202,0.1)] dark:active:shadow-[0_8px_9px_-4px_rgba(59,113,202,0.2),0_4px_18px_0_rgba(59,113,202,0.1)]"
                         >
                           Send
                         </button>

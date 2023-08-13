@@ -3,7 +3,6 @@ import React, { useState } from "react";
 import Image from "next/image";
 import axios from "axios";
 import { useRouter } from "next/navigation";
-import { Bugfender } from "@bugfender/sdk";
 
 export default function Login() {
   const router = useRouter();
@@ -21,17 +20,17 @@ export default function Login() {
     axios
       .post("/api/login", formData)
       .then((res) => {
-        console.log(res.data.user.username);
+        NextBugfender.log(res.data.user.username);
         if (res.data.user === null) {
           alert("Invalid username or password");
         } else {
-          console.log(`/dashboard/${res.data.user.id}`);
+          NextBugfender.log(`/dashboard/${res.data.user.id}`);
           alert("Sucessfully logged in!");
           router.push(`/dashboard/${res.data.user.id}`);
         }
       })
       .catch((err) => {
-        Bugfender.log(err);
+        NextBugfender.log(err);
       });
   }
 
@@ -39,7 +38,7 @@ export default function Login() {
     event.preventDefault();
     // You can implement the login logic here
     loginUser();
-    Bugfender.log("User logged in", formData.username);
+    NextBugfender.log("User logged in", formData.username);
   };
 
   const backgroundStyles = {

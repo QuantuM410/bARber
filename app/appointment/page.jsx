@@ -2,7 +2,6 @@
 import React, { useEffect, useState } from "react";
 import Image from "next/image";
 import axios from "axios";
-import { Bugfender } from "@bugfender/sdk";
 
 const BookAppointments = () => {
   const [salonOptions, setSalonOptions] = useState([]); // ["Salon 1", "Salon 2", "Salon 3"]
@@ -21,15 +20,14 @@ const BookAppointments = () => {
 
   const handleFormSubmit = (event) => {
     event.preventDefault();
-    console.log(formData);
     const updatedFormData = {
       ...formData,
       appointmentTime: formData.appointmentTime + ":00.000Z",
     };
-    console.log(updatedFormData)
+    NextBugfender.log(updatedFormData)
     // Send appointment data to the server
     axios.post("/api/appointment", updatedFormData).then((response) => {
-      console.log(response.data);
+      NextBugfender.log(response.data);
       alert("Appointment booked successfully!");
     });
   };
@@ -37,15 +35,14 @@ const BookAppointments = () => {
   async function getSalons() {
     try {
       const response = await axios.get("/api/salon");
-      console.log(response);
+      NextBugfender.log(response);
 
       // Extract usernames from the response data
       const salons = response.data.salons.map((salon) => salon.username);
-      console.log(salons);
 
       setSalonOptions(salons);
     } catch (error) {
-      Bugfender.log(error);
+      NextBugfender.log(error);
     }
   }
   useEffect(() => {
