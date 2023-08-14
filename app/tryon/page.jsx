@@ -22,7 +22,7 @@ const TryOnPage = () => {
 
             try {
                 deepAR = await deepar.initialize({
-                    licenseKey: "your_license_key_goes_here",
+                    licenseKey: process.env.DEEPAR_KEY,
                     canvas,
                     effect: effectList[0],
 
