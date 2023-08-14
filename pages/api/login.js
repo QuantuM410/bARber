@@ -1,6 +1,11 @@
 import { prisma } from "../../db.ts";
+import express from "express";
+import cors from "cors";
 
-export default async function handler(req, res) {
+const app = express();
+app.use(cors()); // Enable CORS for all routes
+
+app.post("/", async (req, res) => {
   if (req.method === "POST") {
     try {
       const data = req.body;
@@ -18,4 +23,6 @@ export default async function handler(req, res) {
   } else {
     res.status(405).json({ message: "Method not allowed" });
   }
-}
+});
+
+export default app;

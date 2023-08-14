@@ -1,27 +1,14 @@
-import { prisma} from "../../db.ts";
-// export async function GET(req, res) {
-//   try {
-//     const data = req.body;
-//     const user = await prisma.users.create({
-//       data: {
-//         username: data.username,
-//         password: data.password,
-//         email: data.email,
-//         location: data.location,
-//         phone: parseInt(data.phone),
-//         gender: data.gender,
-//       },
-//     });
-//     console.log(user);
-//     console.log(typeof user.phone);
-//     return NextResponse.json({ message: "User created successfully" });
-//   } catch (error) {
-//     console.log(error);
-//   }
-// }
+import { prisma } from "../../db.ts";
+import express from "express";
+import cors from "cors";
 
-export default async function handler(req, res) {
-  if (req.method === "POST") {
+const app = express();
+
+// Enable CORS for all routes
+app.use(cors());
+
+app.post("/", async (req, res) => {
+  try {
     const data = req.body;
     const user = await prisma.users.create({
       data: {
@@ -36,7 +23,10 @@ export default async function handler(req, res) {
     console.log(user);
     console.log(typeof user.phone);
     return res.status(200).json({ user });
-  } else {
-   return res.status(405).json({ message: "Method not allowed" });
+  } catch (error) {
+    console.log(error);
+    return res.status(500).json({ message: "Internal server error" });
   }
-}
+});
+
+export default app;
