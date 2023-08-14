@@ -22,11 +22,11 @@ export default function Register() {
 
   async function createUser() {
     axios.post("/api/register", formData).then((res) => {
-      NextBugfender.log(res);
+      console.log(res);
       window.location.href = "/login";
 
     }).catch((err) => {
-      NextBugfender.log(err)
+      console.log(err)
     });
   }
 
@@ -34,7 +34,7 @@ export default function Register() {
     event.preventDefault();
     // You can implement the registration logic here
     createUser();
-    NextBugfender.log("User registered");
+    console.log("User registered");
   };
   const backgroundStyles = {
     backgroundImage: "linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url('assets/bg.jpg')",

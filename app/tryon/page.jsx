@@ -28,7 +28,7 @@ const TryOnPage = () => {
 
                 });
             } catch (error) {
-                NextBugfender.log(error);
+                console.log(error);
                 return;
             }
 

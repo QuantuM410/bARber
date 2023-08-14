@@ -20,17 +20,17 @@ export default function Login() {
     axios
       .post("/api/login", formData)
       .then((res) => {
-        NextBugfender.log(res.data.user.username);
+        console.log(res.data.user.username);
         if (res.data.user === null) {
           alert("Invalid username or password");
         } else {
-          NextBugfender.log(`/dashboard/${res.data.user.id}`);
+          console.log(`/dashboard/${res.data.user.id}`);
           alert("Sucessfully logged in!");
           router.push(`/dashboard/${res.data.user.id}`);
         }
       })
       .catch((err) => {
-        NextBugfender.log(err);
+        console.log(err);
       });
   }
 
@@ -38,7 +38,7 @@ export default function Login() {
     event.preventDefault();
     // You can implement the login logic here
     loginUser();
-    NextBugfender.log("User logged in", formData.username);
+    console.log("User logged in", formData.username);
   };
 
   const backgroundStyles = {
