@@ -106,32 +106,24 @@ const TryOnPage = () => {
 
                 <div class="carousel absolute bottom-0 md:bottom-10 left-1/2 transform -translate-x-1/2" id="carousel">
                     <div class="carousel-center" id="carousel-center">
-                        <div class="lds-ring" id="loading-spinner" style={{ display: 'none' }}>
-
-                        </div>
+                        <div class="lds-ring" id="loading-spinner" style={{ display: 'none' }}></div>
                     </div>
-                    <div class="carousel-slider flex  md:flex-row justify-center items-center md:space-x-4">
+                    <div class="carousel-slider flex md:flex-row justify-center items-center md:space-x-4">
                         <div class="slide mb-4 md:mb-0">
-                            <img class="w-32 h-32 border-4 rounded-full" src="avatars/white.png" alt="Avatar" />
+                            <img class="w-20 h-20 md:w-32 md:h-32 border-4 rounded-full" src="avatars/white.png" alt="Avatar" />
                         </div>
                         <div class="slide mb-4 md:mb-0">
-                            <img class="w-32 h-32 border-4 rounded-full" src="avatars/brownhair.png" alt="Avatar" />
+                            <img class="w-20 h-20 md:w-32 md:h-32 border-4 rounded-full" src="avatars/brownhair.png" alt="Avatar" />
                         </div>
                         <div class="slide mb-4 md:mb-0">
-                            <img class="w-32 h-32 border-4 rounded-full" src="avatars/blackhair.png" alt="Avatar" />
+                            <img class="w-20 h-20 md:w-32 md:h-32 border-4 rounded-full" src="avatars/blackhair.png" alt="Avatar" />
                         </div>
                         <div class="slide">
-                            <img class="w-32 h-32 border-4 rounded-full" src="avatars/green.png" alt="Avatar" />
+                            <img class="w-20 h-20 md:w-32 md:h-32 border-4 rounded-full" src="avatars/green.png" alt="Avatar" />
                         </div>
                     </div>
                 </div>
             </div>
-
-
-
-
-
-
             {/* Other UI elements */}
         </div>
     );
