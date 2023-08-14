@@ -3,11 +3,12 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
-    "vercel-build": "next build",
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "next lint"
+    "lint": "next lint",
+    "vercel-build": "node ./custom-build-script.ts && next build"
+    
   },
   "dependencies": {
     "@bugfender/sdk": "^2.2.4",
