@@ -22,7 +22,7 @@ const TryOnPage = () => {
 
             try {
                 deepAR = await deepar.initialize({
-                    licenseKey: process.env.DEEPAR_KEY,
+                    licenseKey: "your_license_key_here",
                     canvas,
                     effect: effectList[0],
 
@@ -110,7 +110,7 @@ const TryOnPage = () => {
 
                         </div>
                     </div>
-                    <div class="carousel-slider flex flex-col md:flex-row justify-center items-center md:space-x-4">
+                    <div class="carousel-slider flex  md:flex-row justify-center items-center md:space-x-4">
                         <div class="slide mb-4 md:mb-0">
                             <img class="w-32 h-32 border-4 rounded-full" src="avatars/white.png" alt="Avatar" />
                         </div>
