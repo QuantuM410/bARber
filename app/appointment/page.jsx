@@ -24,10 +24,8 @@ const BookAppointments = () => {
       ...formData,
       appointmentTime: formData.appointmentTime + ":00.000Z",
     };
-    NextBugfender.log(updatedFormData)
     // Send appointment data to the server
     axios.post("/api/appointment", updatedFormData).then((response) => {
-      NextBugfender.log(response.data);
       alert("Appointment booked successfully!");
     });
   };
@@ -35,15 +33,14 @@ const BookAppointments = () => {
   async function getSalons() {
     try {
       const response = await axios.get("/api/salon");
-      NextBugfender.log(response);
 
       // Extract usernames from the response data
       const salons = response.data.salons.map((salon) => salon.username);
 
       setSalonOptions(salons);
     } catch (error) {
-      NextBugfender.log(error);
-    }
+      
+        }
   }
   useEffect(() => {
     getSalons();
