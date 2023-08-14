@@ -15,33 +15,33 @@ export default function RootLayout({ children }) {
     </html>
   )
 }
-// export function reportWebVitals(metric) {
-//   switch (metric.name) {
-//     case "FCP":
-//       sendAnalytics(metric);
-//       break;
-//     case "LCP":
-//       sendAnalytics(metric);
-//       break;
-//     case "CLS":
-//       sendAnalytics(metric);
-//       break;
-//     case "FID":
-//       sendAnalytics(metric);
-//       break;
-//     case "TTFB":
-//       sendAnalytics(metric);
-//       break;
-//     case "Next.js-hydration":
-//       sendAnalytics(metric);
-//       break;
-//     case "Next.js-route-change-to-render":
-//       sendAnalytics(metric);
-//       break;
-//     case "Next.js-render":
-//       sendAnalytics(metric);
-//       break;
-//     default:
-//       break;
-//   }
-// }
+export function reportWebVitals(metric) {
+  switch (metric.name) {
+    case "FCP":
+      sendAnalytics(metric);
+      break;
+    case "LCP":
+      sendAnalytics(metric);
+      break;
+    case "CLS":
+      sendAnalytics(metric);
+      break;
+    case "FID":
+      sendAnalytics(metric);
+      break;
+    case "TTFB":
+      sendAnalytics(metric);
+      break;
+    case "Next.js-hydration":
+      sendAnalytics(metric);
+      break;
+    case "Next.js-route-change-to-render":
+      sendAnalytics(metric);
+      break;
+    case "Next.js-render":
+      sendAnalytics(metric);
+      break;
+    default:
+      break;
+  }
+}

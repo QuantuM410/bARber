@@ -1,16 +1,5 @@
 import { prisma } from "../../db.ts";
-
 export default async function handler(req, res) {
-  // Enable CORS for all routes
-  res.setHeader("Access-Control-Allow-Origin", "*");
-  res.setHeader("Access-Control-Allow-Methods", "GET");
-  
-  if (req.method === "OPTIONS") {
-    // Preflight request, respond with 200 OK
-    res.status(200).end();
-    return;
-  }
-
   if (req.method === "GET") {
     try {
       const data = req.body;
