@@ -7,7 +7,8 @@
     "build": "next build",
     "start": "next start",
     "lint": "next lint",
-    "vercel-build": "node ./custom-build-script.ts && next build"
+    "vercel-build": "next build"
+
     
   },
   "dependencies": {
