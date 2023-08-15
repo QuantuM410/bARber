@@ -21,9 +21,9 @@ export default function Register() {
   };
 
   async function createUser() {
-    axios.post("https://b-a-rber.vercel.app/api/register", formData).then((res) => {
+    axios.post("/api/register", formData).then((res) => {
       console.log(res);
-      window.location.href = "https://b-a-rber.vercel.app/login";
+      return res.redirect(303, '/login');
 
     }).catch((err) => {
       console.log(err)
