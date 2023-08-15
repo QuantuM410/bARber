@@ -2,7 +2,9 @@ import { prisma } from "../../db.ts";
 
 export default async function handler(req, res) {
   if (req.method === "POST") {
+    console.log("object")
     const data = req.body;
+    console.log(data)
     try {
       const user = await prisma.users.create({
         data: {
