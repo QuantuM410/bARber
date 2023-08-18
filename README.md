@@ -45,6 +45,8 @@ Welcome to the Barber App repository! This project is developed using Next.js 13
 
    ```
 
+
 6. Open your browser and navigate to http://localhost:3000 to see the Barber App in action!
+
 
 Now you're all set to explore and experiment with the Barber App. Have fun managing appointments, customers, and trying out different hairstyles using AR! 💇‍♂️💇‍♀️
