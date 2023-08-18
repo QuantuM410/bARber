@@ -15,5 +15,36 @@ Welcome to the Barber App repository! This project is developed using Next.js 13
 ## Getting Started 🚀
 
 1. Clone the repository:
+
    ```bash
-   git clone https://github.com/yourusername/barber-app.git
+   git clone https://github.com/QuantuM410/bARber.git
+
+   ```
+
+2. Install dependencies:
+
+   ```bash
+   cd barber-app
+   npm install
+
+   ```
+
+3. Obtain a MySQL database URL from a hosting service of your choice. You can use platforms like Heroku, AWS, or others to set up a MySQL database.
+
+4. Update the .env file with your MySQL database URL:
+
+   ```bash
+   DATABASE_URL="mysql://username:password@host:port/database_name"
+
+   ```
+
+5. Run the application on your local machine:
+
+   ```bash
+   npm run dev
+
+   ```
+
+6. Open your browser and navigate to http://localhost:3000 to see the Barber App in action!
+
+Now you're all set to explore and experiment with the Barber App. Have fun managing appointments, customers, and trying out different hairstyles using AR! 💇‍♂️💇‍♀️
