@@ -1,29 +1,42 @@
-import { prisma } from "../../db.ts";
+import { prisma} from "../../db.ts";
+// export async function GET(req, res) {
+//   try {
+//     const data = req.body;
+//     const user = await prisma.users.create({
+//       data: {
+//         username: data.username,
+//         password: data.password,
+//         email: data.email,
+//         location: data.location,
+//         phone: parseInt(data.phone),
+//         gender: data.gender,
+//       },
+//     });
+//     console.log(user);
+//     console.log(typeof user.phone);
+//     return NextResponse.json({ message: "User created successfully" });
+//   } catch (error) {
+//     console.log(error);
+//   }
+// }
 
 export default async function handler(req, res) {
   if (req.method === "POST") {
-    console.log("object")
     const data = req.body;
-    console.log(data)
-    try {
-      const user = await prisma.users.create({
-        data: {
-          username: data.username,
-          password: data.password,
-          email: data.email,
-          location: data.location,
-          phone: data.phone,
-          gender: data.gender,
-        },
-      });
-      console.log(user);
-      console.log(typeof user.phone);
-      return res.status(200).json(user); // Return user data directly
-    } catch (error) {
-      console.log(error);
-      return res.status(500).json({ message: "Internal server error" });
-    }
+    const user = await prisma.users.create({
+      data: {
+        username: data.username,
+        password: data.password,
+        email: data.email,
+        location: data.location,
+        phone: data.phone,
+        gender: data.gender,
+      },
+    });
+    console.log(user);
+    console.log(typeof user.phone);
+    return res.status(200).json({ user });
   } else {
-    return res.status(405).json({ message: "Method not allowed" });
+   return res.status(405).json({ message: "Method not allowed" });
   }
 }
