@@ -3,8 +3,10 @@
 import React, { useState } from "react";
 import Image from "next/image";
 import axios from "axios";
+import { useRouter } from "next/navigation";
 
 export default function Register() {
+  const router = useRouter();
   const [formData, setFormData] = useState({
     username: "",
     password: "",
@@ -23,7 +25,7 @@ export default function Register() {
   async function createUser() {
     axios.post("/api/register", formData).then((res) => {
       console.log(res);
-      return res.redirect(303, '/login');
+      router.push('/login');
 
     }).catch((err) => {
       console.log(err)
